@@ -119,21 +119,22 @@
                 overflow-x: auto; /* Adiciona barra de rolagem horizontal */
             }
         }
-        /* Permite zoom via rolagem do mouse */
-        .table-container {
-            overflow: auto;
-        }
+      /* Zoom interativo para mobile */
+    .zoomable {
+    transform: scale(0.8);
+    transform-origin: 0 0;
+    transition: transform 0.25s ease;
+}
 
-        /* Permitir zoom (transformar a escala da tabela) */
-        .zoomable {
-            transform: scale(1);
-            transform-origin: 0 0;
-            transition: transform 0.25s ease;
-        }
+    .zoomable:active {
+    transform: scale(1.1); /* Aumenta a tabela ao toque */
+}
 
-        .zoomable:hover {
-            cursor: zoom-in;
-        }
+/* Garantir que a largura da tabela ocupe toda a tela e não corte informações */
+    .table-container {
+    overflow: auto;
+    width: 100%;
+}
     </style>
     <script>
         function adicionarLinha() {
