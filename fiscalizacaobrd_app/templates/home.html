@@ -119,6 +119,21 @@
                 overflow-x: auto; /* Adiciona barra de rolagem horizontal */
             }
         }
+        /* Permite zoom via rolagem do mouse */
+        .table-container {
+            overflow: auto;
+        }
+
+        /* Permitir zoom (transformar a escala da tabela) */
+        .zoomable {
+            transform: scale(1);
+            transform-origin: 0 0;
+            transition: transform 0.25s ease;
+        }
+
+        .zoomable:hover {
+            cursor: zoom-in;
+        }
     </style>
     <script>
         function adicionarLinha() {
